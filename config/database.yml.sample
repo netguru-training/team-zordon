@@ -6,16 +6,19 @@ default: &default
   username: herrings_app
 
 development:
+  <<: *default
   database: herrings_app_development
   password:
   template: template0
 
 test:
+  <<: *default
   database: herrings_app_test
   password:
   template: template0
 
 production:
+  <<: *default
   database: herrings_app_production
   password:
   template: template0
