@@ -3,7 +3,7 @@ rvm:
   - 2.2.3
 before_script:
   - cp config/database.yml.sample config/database.yml
-  - bundle exec rake db:create db:schema:load
+  - psql -c 'create database herrings_app_test;' -U herrings_app
 addons:
   postgresql: '9.3'
 
