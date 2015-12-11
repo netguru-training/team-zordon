@@ -18,7 +18,7 @@
 PreCommit:
   RuboCop:
     enabled: true
-    on_warn: fail # Treat all warnings as failures
+    on_fail: warn
 
   TrailingWhitespace:
     enabled: true
@@ -39,6 +39,8 @@ PreCommit:
 
   Reek:
     enabled: true
+    exclude:
+      - 'config/application.rb'
 
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type

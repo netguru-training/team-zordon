@@ -26,6 +26,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'overcommit'
   gem 'reek'
+  gem 'brakeman'
 end
 group :development, :test do
   gem 'factory_girl_rails'
