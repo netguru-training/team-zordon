@@ -24,6 +24,8 @@ group :development do
   gem 'html2haml'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'overcommit'
+  gem 'reek'
 end
 group :development, :test do
   gem 'factory_girl_rails'
