@@ -7,18 +7,18 @@ default: &default
 
 development:
   <<: *default
-  database: herrings_app_development
+  database: zordon_app_development
   password:
   template: template0
 
 test:
   <<: *default
-  database: herrings_app_test
+  database: zordon_app_test
   password:
   template: template0
 
 production:
   <<: *default
-  database: herrings_app_production
+  database: zordon_app_production
   password:
   template: template0

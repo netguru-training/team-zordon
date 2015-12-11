@@ -1,9 +1,9 @@
 #Zordon
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[https://team-zordon.herokuapp.com/](https://team-zordon.herokuapp.com/)
 
 
 # Setup
+Run
 ```bash
 .bin/setup
 ```
@@ -18,4 +18,3 @@ This application requires:
 
 - Ruby 2.2.3
 - Rails 4.2.5
-
