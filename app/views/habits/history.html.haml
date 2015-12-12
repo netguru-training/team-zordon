@@ -1,0 +1,15 @@
+-user_habits.each do |habit|
+  .col-md-4
+    =month_calendar do |date|
+      =date.strftime("%d")
+      - if habit.days.include? date.wday
+        - if habit.tasks.on_day(date).exists?
+          - if habit.tasks.on_day(date).first.not_done?
+            %span.glyphicon.glyphicon-remove-sign
+          - elsif habit.tasks.on_day(date).first.suspended?
+            %span.glyphicon.glyphicon-hourglass
+          - else
+            %span.glyphicon.glyphicon-ok-sign
+        - else
+          %span.glyphicon.glyphicon-question-sign
+
