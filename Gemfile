@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'decent_exposure'
 gem 'merit'
+gem 'simple_calendar', "~> 2.0"
 group :development, :test do
   gem 'byebug'
 end

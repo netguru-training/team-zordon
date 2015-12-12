@@ -4,5 +4,4 @@ class Task < ActiveRecord::Base
 
   belongs_to :habit
 
-  validates :state, inclusion: { in: STATES }, presence: true
 end
