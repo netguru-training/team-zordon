@@ -29,3 +29,5 @@ en:
       small_description: "Description"
       active: "Active"
       days: "Days"
+  shared:
+    actions: "Actions"

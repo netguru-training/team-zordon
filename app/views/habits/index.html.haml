@@ -1,11 +1,12 @@
-%table.table.table-condensed
+%table.table.table-hover
   %thead
     %tr
-      %th= t('habit.columns.name')
-      %th= t('habit.columns.description')
-      %th= t('habit.columns.small_name')
-      %th= t('habit.columns.small_description')
-      %th= t('habit.columns.active')
-      %th= t('habit.columns.days')
+      %th.col-md-2= t('habit.columns.name')
+      %th.col-md-2= t('habit.columns.description')
+      %th.col-md-2= t('habit.columns.small_name')
+      %th.col-md-2= t('habit.columns.small_description')
+      %th.col-md-2= t('habit.columns.days')
+      %th.col-md-1= t('habit.columns.active')
+      %th.col-md-1= t('shared.actions')
   %tbody
     = render 'habits'
