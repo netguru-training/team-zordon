@@ -1,4 +1,4 @@
 class Habit < ActiveRecord::Base
   serialize :days, Array
-  has_many :achievements, as: :achievementable
+  has_many :achievement, as: :achievementable
 end
