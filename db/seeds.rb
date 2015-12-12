@@ -1,15 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+puts "Seeds: start"
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
-# Environment variables (ENV['...']) can be set in the file .env file.
-#
-
 user = User.create(email: 'admin@admin.com', password: 'adminadmin')
 
 3.times do
@@ -32,3 +23,20 @@ Habit.all.each do |habit|
   end
 end
 puts "CREATED TASKS"
+
+
+ACHIEVEMENT_NAMES = %w(Batman Superman Tarzan Hulk).shuffle
+SEEN_STATE = %w(true false)
+
+5.times do
+	Achievement.create!(
+	  name: ACHIEVEMENT_NAMES.pop,
+	  description: Faker::Lorem.sentence,
+	  image: Faker::Avatar.image("50x50"),
+	  seen: SEEN_STATE.sample 
+		)
+end
+puts "CREATED ACHIEVEMENTS"
+
+puts "Seeds: done"
+

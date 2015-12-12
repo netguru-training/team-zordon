@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 20151212125735) do
     t.string   "days"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "user_id"
     t.integer  "sash_id"
     t.integer  "level",             default: 0
-    t.integer  "user_id"
   end
 
   add_index "habits", ["user_id"], name: "index_habits_on_user_id", using: :btree
