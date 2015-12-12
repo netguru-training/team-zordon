@@ -10,4 +10,8 @@ describe User do
     expect(@user.email).to match 'user@example.com'
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many :habits }
+  end
+
 end

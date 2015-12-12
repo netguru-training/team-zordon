@@ -9,4 +9,8 @@ RSpec.describe Habit do
     it { should have_db_column :active }
     it { should have_db_column :days }
   end
+
+  describe 'associations' do
+    it { is_expected.to belong_to :user }
+  end
 end
