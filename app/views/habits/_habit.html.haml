@@ -1,0 +1,14 @@
+%tr
+  %td= habit.name
+  %td= habit.description
+  %td= habit.small_name
+  %td= habit.small_description
+  %td= habit.days
+  %td= habit.active
+  %td
+    = link_to habit_path(habit) do
+      %button.btn.btn-default
+        %span.glyphicon.glyphicon-edit
+    = link_to habit_path(habit, { method: :delete }) do
+      %button.btn.btn-default
+        %span.glyphicon.glyphicon-remove
