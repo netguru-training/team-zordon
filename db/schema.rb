@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210210634) do
+ActiveRecord::Schema.define(version: 20151212110014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.boolean  "seen"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "achievementable_id"
+    t.string   "achievementable_type"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
