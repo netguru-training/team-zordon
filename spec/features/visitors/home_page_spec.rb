@@ -5,7 +5,7 @@
 feature 'Home page' do
 
   background do
-    sign_in
+    sign_up_with('test@example.com', 'please123', 'please123')
     expect(page).to have_content 'Logout'
   end
   scenario 'visit the home page' do
