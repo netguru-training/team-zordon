@@ -1,7 +1,7 @@
 puts "Seeds: start"
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
-user = User.create(email: 'admin@admin.com', password: 'adminadmin')
+user = User.create!(email: 'admin@admin.com', password: 'adminadmin')
 
 3.times do
   has_small = rand(1..2) == 1
