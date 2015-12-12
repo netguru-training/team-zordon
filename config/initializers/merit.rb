@@ -31,3 +31,21 @@ end
 # }].each do |attrs|
 #   Merit::Badge.create! attrs
 # end
+
+Merit::Badge.create!(
+  id: 1,
+  name: "One week strak",
+  description: "Habit week long"
+  )
+
+Merit::Badge.create!(
+  id: 2,
+  name: "Two week strak",
+  description: "Habit two week long"
+  )
+
+Merit::Badge.create!(
+  id: 3,
+  name: "Three week strak",
+  description: "Habit three week long"
+  )
