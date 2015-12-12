@@ -1,3 +1,3 @@
 class Habit < ActiveRecord::Base
-  serialize :days Array
+  serialize :days, Array
 end
