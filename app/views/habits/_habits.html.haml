@@ -1,2 +1,2 @@
 -user_habits.each do |habit|
-  = render habit
+  = render 'habits/habit', :habit => habit.decorate
