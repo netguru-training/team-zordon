@@ -1,5 +1,14 @@
 %h1
-  asfsdasdf
-  - achievements.each do |achievement|
+  User achievements
+%table.table.table-condensed
+  %thead
     %tr
-      %td= achievement.name
+      %th Achievement name
+      %th Achievemnt sign
+      %th Achievement type    
+  - achievements.each do |achievement|
+    %tbody  
+      %tr
+        %td= achievement.name
+        %td= achievement.image
+        %td= achievement.achievementable_type

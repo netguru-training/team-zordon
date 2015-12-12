@@ -31,7 +31,6 @@ end
 # }].each do |attrs|
 #   Merit::Badge.create! attrs
 # end
-
 Merit::Badge.create!(
   id: 1,
   name: "One week strak",
