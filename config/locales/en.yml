@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  habit:
+    columns:
+      name: "Name"
+      description: "Description"
+      small_name: "Small name"
+      small_description: "Description"
+      active: "Active"
+      days: "Days"

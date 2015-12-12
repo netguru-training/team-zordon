@@ -1,0 +1,20 @@
+%tr
+  %td= habit.name
+  %td= habit.description
+  %td= habit.small_name
+  %td= habit.small_description
+  %td= habit.acive
+  %td= habit.days
+  %td
+    = link_to habit_path(habit), { title: t('shared.show') } do
+      %button.btn.btn-default
+        = fa_icon "search"
+    = link_to edit_habit_path(habit), { title: t('shared.edit') } do
+      %button.btn.btn-default
+        = fa_icon "edit"
+    = link_to habit_path(habit), { method: :delete, title: t('shared.delete') } do
+      %button.btn.btn-default
+        = fa_icon "times"
+    = link_to habit_subjects_path(habit), { title: t('shared.show_subject_items') } do
+      %button.btn.btn-default
+        = fa_icon "list"

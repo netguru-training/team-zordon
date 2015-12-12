@@ -1,1 +1,11 @@
-
+%table.table.table-condensed
+  %thead
+    %tr
+      %th= t('habit.columns.name')
+      %th= t('habit.columns.description')
+      %th= t('habit.columns.small_name')
+      %th= t('habit.columns.small_description')
+      %th= t('habit.columns.active')
+      %th= t('habit.columns.days')
+  %tbody
+    = render habits
