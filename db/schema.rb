@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151212110014) do
+=======
+ActiveRecord::Schema.define(version: 20151212102833) do
+>>>>>>> Add habit model
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -25,6 +30,17 @@ ActiveRecord::Schema.define(version: 20151212110014) do
     t.datetime "updated_at",           null: false
     t.integer  "achievementable_id"
     t.string   "achievementable_type"
+=======
+  create_table "habits", force: :cascade do |t|
+    t.string   "name",                             null: false
+    t.text     "description"
+    t.string   "small_name"
+    t.text     "small_description"
+    t.boolean  "active",            default: true
+    t.string   "days"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+>>>>>>> Add habit model
   end
 
   create_table "users", force: :cascade do |t|
