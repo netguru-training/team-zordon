@@ -31,3 +31,6 @@ en:
       days: "Days"
   shared:
     actions: "Actions"
+  active:
+    truthy: "Active"
+    falsy: "Suspended"
