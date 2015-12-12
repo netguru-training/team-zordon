@@ -1,3 +1,12 @@
+// color variables
+$blue: #666699;
+$white: #FFFFFF;
+
+// override bootstrap variables
+$navbar-default-color: $white;
+$navbar-default-link-color: $white;
+$navbar-default-bg: $blue;
+
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
