@@ -114,6 +114,11 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -234,6 +239,7 @@ GEM
       private_attr (~> 1.1)
       rainbow (~> 2.0)
       unparser (~> 0.2.2)
+    request_store (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.4.1)
@@ -350,6 +356,7 @@ DEPENDENCIES
   database_cleaner
   decent_exposure
   devise
+  draper
   factory_girl_rails
   faker
   foreman
