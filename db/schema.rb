@@ -47,9 +47,12 @@ ActiveRecord::Schema.define(version: 20151212113156) do
     t.string   "days"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "user_id"
     t.integer  "sash_id"
     t.integer  "level",             default: 0
   end
+
+  add_index "habits", ["user_id"], name: "index_habits_on_user_id", using: :btree
 
   create_table "merit_actions", force: :cascade do |t|
     t.integer  "user_id"
