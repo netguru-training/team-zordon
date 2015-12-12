@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Habit, type: :model do
+RSpec.describe Habit do
   describe 'database colummns' do
     it { should have_db_column :name }
     it { should have_db_column :description }
