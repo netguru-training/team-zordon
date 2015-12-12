@@ -1,10 +1,16 @@
 language: ruby
 rvm:
-  - 2.2.3
+- 2.2.3
 before_script:
-  - cp config/database.yml.sample config/database.yml
-  - psql -c 'create database zordon_app_test;' -U postgres
+- cp config/database.yml.sample config/database.yml
+- psql -c 'create database zordon_app_test;' -U postgres
 addons:
   postgresql: '9.3'
-
 script: bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: gz5WDYHt/tEijt1XQUJkiF3k5on/z/mEAlR4nkj4XdI1bJ7GiNsg6JWOMjfbSxVwEhI3FeU3vTjewW6JDyobEtu5paIJw11ArbXOIQyRiSKj2Ply/n+m93o+tt9xGMZn7U5uBUal81J54PjPtBCWobU43t4qH6hvepAzMK/qAnv+MNKQgWJ8gcgtZvETQV4x9ATm3bqQsP4+JBlm7t2X4aSJN8RE2UagLOoIfG3c45rPeh3wXIvJm8ZoK4FbzC2aS5YG5UD9aKLso3+jvlU61t7tMn8QbhjtDcs7t8wM8uBKftxRqIVEp3zrk44bJVhRJQ1j0+DvZ4ixTn2ujgb5jHA/Whp94lDPzY8NQ0KS170f5Gjrg92q9u7BgZETJVJvVgAg/aaZcs5/GRrX1jbwJ8rKHIgZuoDs2rg8nxO5zcl8q0aqnR/5EoouD6EIZ42eooGEstK5dDPG5zEGwufrADtemJGbfErTcdicx2Fm8pfsZimFpxN4O6/OpX7jMRatGM5orBoYOQzIE5dgW/blStSs8BASjZgiXpqsfvgER6Zry6kuiH4hYG9lYz+Fya7KA0BIHDb9sDQwCNHIuEeyCKoZH63wJNsNII4y61mftUEkBYdNZtF1xgM6X/tuna6k/1BuskTfb9hJIdnDKjd7uZ/N8E3dofJ5GHkYRnGLYzk=
+  run:
+  - "rake db:migrate"
+  - "rake cleanup"
