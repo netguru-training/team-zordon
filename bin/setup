@@ -8,16 +8,23 @@ Dir.chdir APP_ROOT do
   puts "== Installing dependencies =="
   system "gem install bundler --conservative"
   system "bundle check || bundle install"
+  system "createuser -s -r workshops"
 
   puts "\n== Copying sample files =="
   unless File.exist?("config/database.yml")
-    system "createuser -s -r workshops"
+    puts "\n=== database.yml ==="
     system "cp config/{database.yml.sample,database.yml}"
-    system "sed s/'username: postgres'/'username: workshops'/g <config/database.yml >config/database.yml"
+    system "sed 's/: postgres/: workshops/g' <config/database.yml >config/database.yml.new"
+    system "mv config/database{.yml,.yml.bak}"
+    system "mv config/database{.yml.new,.yml}"
   end
 
   puts "\n== Preparing database =="
   system "bin/rake db:setup"
+
+  puts "\n== Install Overcommit =="
+  system "overcommit --install"
+  system "overcommit --sign"
 
   puts "\n== Removing old logs and tempfiles =="
   system "rm -f log/*"
