@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :habits do
-  	resources :tasks, only: [:create]
+  	resources :tasks, only: [:create, :update]
   end
     
   get 'history', to: 'habits#history', as: :habit_history

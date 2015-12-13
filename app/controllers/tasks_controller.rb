@@ -4,7 +4,14 @@ class TasksController < ApplicationController
 
 	def create
 		habit.tasks.save
-		redirect_to habit_history_path, notice: "Your answer has been added"
+
+    head status: 200
+	end
+
+	def update 
+    task.save
+
+    head status: 200
 	end
 
 	private
