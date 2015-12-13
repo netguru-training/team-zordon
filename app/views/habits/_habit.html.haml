@@ -3,7 +3,10 @@
   %td= habit.description
   %td= habit.small_name
   %td= habit.small_description
-  %td= habit.name_days
+  %td
+    %ul
+      - habit.name_days.each do |name|
+        %li= name 
   %td= habit.active_name
   %td
     = link_to habit_path(habit) do

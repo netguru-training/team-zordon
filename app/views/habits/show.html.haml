@@ -14,8 +14,8 @@
       %td= habit.small_description
     %tr
       %td= "#{t('habit.columns.days')}:"
-      %td= habit.decorate.name_days
+      %td= habit.inline_name_days
     %tr
       %td= "#{t('habit.columns.active')}:"
-      %td= habit.decorate.active_name
+      %td= habit.active_name
 = link_to t('shared.back'), habits_path, class: 'btn btn-default'

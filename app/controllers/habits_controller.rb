@@ -3,7 +3,7 @@ class HabitsController < ApplicationController
   before_action :authenticate_user!
 
   expose(:user_habits) { current_user.habits.includes(:tasks) }
-  expose(:habit, attributes: :habit_params)
+  expose_decorated(:habit, attributes: :habit_params)
 
   def create
     habit.days = params[:days].map{ |day| day.to_i }
@@ -30,7 +30,7 @@ class HabitsController < ApplicationController
 
   def edit
   end
-  
+
   def index
   end
 

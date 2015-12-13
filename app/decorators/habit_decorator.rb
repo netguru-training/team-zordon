@@ -6,6 +6,10 @@ class HabitDecorator < Draper::Decorator
     object.days.map { |day| Date::DAYNAMES[day] }
   end
 
+  def inline_name_days
+    name_days.join(' ')
+  end
+
   def active_name
     object.active ? h.t('active.truthy') : h.t('active.falsy')
   end
