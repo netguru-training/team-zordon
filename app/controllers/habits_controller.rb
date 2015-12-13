@@ -5,6 +5,16 @@ class HabitsController < ApplicationController
   expose(:user_habits) { current_user.habits.includes(:tasks) }
   expose(:habit, attributes: :habit_params)
 
+  def create
+    habit.days = params[:days].map{ |day| day.to_i }
+    habit.user = current_user
+    if habit.save
+      redirect_to habit_path(habit),
+        notice: I18n.t('shared.created', resource: 'Habit')
+    else
+      render :new
+    end
+  end
 
   def index
   end
