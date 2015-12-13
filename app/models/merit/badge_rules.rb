@@ -45,153 +45,64 @@ module Merit
       #   user.name.length > 4
       # end
 
-grant_on 'tasks#create', badge: 'One week strak', 
-  model_name: 'task', to: :habit do |task|
-    streak_check(1.week.ago, task)
-end
+      grant_on 'tasks#create', badge: 'One week strak', 
+        model_name: 'task', to: :habit do |task|
+          streak_check(1.week.ago, task)
+      end
 
-grant_on 'tasks#create', badge: 'Two week strak', 
-  model_name: 'task', to: :habit do |task|
-    streak_check(2.weeks.ago, task)
-end
+      grant_on 'tasks#create', badge: 'Two week strak', 
+        model_name: 'task', to: :habit do |task|
+          streak_check(2.weeks.ago, task)
+      end
 
-grant_on 'tasks#create', badge: 'Three week strak', 
-  model_name: 'task', to: :habit do |task|
-    streak_check(3.weeks.ago, task)
-end
+      grant_on 'tasks#create', badge: 'Three week strak', 
+        model_name: 'task', to: :habit do |task|
+          streak_check(3.weeks.ago, task)
+      end
 
-Merit::Badge.create!(
-  id: 4,
-  name: "Good Start",
-  description: "For the first done task"
-  )
-# Badge for the first habit done task
-grant_on 'tasks#create', badge: 'Even the longes jurney...', 
-  model_name: 'task', to: :habit do |task|
-    task.habit.tasks.count == 1
-end
 
-Merit::Badge.create!(
-  id: 5,
-  name: "Dexter",
-  description: "Make three tasks green in one day"
-  )
+      # Badge for the first habit done task
+      grant_on 'tasks#create', badge: 'Even the longes jurney...', 
+        model_name: 'task', to: :habit do |task|
+          task.habit.tasks.count == 1
+      end
 
-# Make three tasks green in one day
-grant_on 'tasks#create', badge: 'Dexter', 
-  model_name: 'task', to: :user do |task|
-    user = task.habit.user 
-    user.tasks.done.on_day(1.day.ago).count == 3
-end
+      # Make three tasks green in one day
+      grant_on 'tasks#create', badge: 'Dexter', 
+        model_name: 'task', to: :user do |task|
+          user = task.habit.user 
+          user.tasks.done.on_day(1.day.ago).count == 3
+      end
 
-Merit::Badge.create!(
-  id: 6,
-  name: "Rambo part 10",
-  description: "Make a task green after 4 fails in a row"
-  )
 
-grant_on 'tasks#create', badge: 'Dexter', 
-  model_name: 'task', to: :habit do |task|
-    last_tasks = task.habit.tasks.last(5)
-    last_tasks.last.done? && last_tasks.first(4).all?(&:not_done?)
-end
+      #Make a task green after 4 fails in a row
 
-Merit::Badge.create!(
-  id: 7,
-  name: "Alibaba",
-  description: "Make 40 tasks green"
-  )
+      grant_on 'tasks#create', badge: 'Dexter', 
+        model_name: 'task', to: :habit do |task|
+          last_tasks = task.habit.tasks.last(5)
+          last_tasks.last.done? && last_tasks.first(4).all?(&:not_done?)
+      end
 
-grant_on 'tasks#create', badge: 'Alibaba', 
-  model_name: 'task', to: :user do |task|
-    user = task.habit.user
-    user.
-end
+    #Merit::Badge.create!(
+    #  id: 7,
+    #  name: "Alibaba",
+    #  description: "Make 40 tasks green"
+    #  )
 
-Merit::Badge.create!(
-  id: 8,
-  name: "Path to glory",
-  description: "Create account"
-  )
-
-Merit::Badge.create!(
-  id: 9,
-  name: "Bad day",
-  description: "Fail 3 tasks in one day"
-  )
-
-Merit::Badge.create!(
-  id: 10,
-  name: "Holidays",
-  description: "Suspend task for a week"
-  )
-
-Merit::Badge.create!(
-  id: 11,
-  name: "Tomorow will be better",
-  description: "Mark small done taks"
-  )
-
-Merit::Badge.create!(
-  id: 12,
-  name: "Rising Sun",
-  description: "Make a small done task after a fail"
-  )
-
-Merit::Badge.create!(
-  id: 13,
-  name: "Hammer of wrath",
-  description: "Make a three task green in one day after more then two days of fail tasks"
-  )
-
-Merit::Badge.create!(
-  id: 14,
-  name: "Nobody expects the Spanish Inquisition",
-  description: "Fail one task after more then 30 days of a green streak"
-  )
-
-Merit::Badge.create!(
-  id: 15,
-  name: "Superman",
-  description: "Make 3 green taska everyday for a week"
-  )
-
-Merit::Badge.create!(
-  id: 16,
-  name: "Herkules",
-  description: "Make 2 green tasks everyday for a week"
-  )
-
-Merit::Badge.create!(
-  id: 17,
-  name: "Macgyver",
-  description: "Make tasks green in one day"
-  )
-
-Merit::Badge.create!(
-  id: 18,
-  name: "Back to work",
-  description: "Make green task right after suspended task"
-  )
-
-Merit::Badge.create!(
-  id: 19,
-  name: "Flash",
-  description: "Make 100 green tasks in 40 days"
-  )
-
-Merit::Badge.create!(
-  id: 20,
-  name: "Chuck Norris",
-  description: "Make 90 green tasks in 30 days"
-  )
+    grant_on 'tasks#create', badge: 'Alibaba', 
+      model_name: 'task', to: :user do |task|
+        user = task.habit.user
     end
-  end
 
-private
-  def streak_check(date, task)
-    yesterday = 1.day.ago
-    between = (yesterday.beginning_of_day + date)..yesterday.end_of_day
-    task.habit.tasks.done.where(created_at: between).all?(&:done?)
+
+
+      private
+        def streak_check(date, task)
+          yesterday = 1.day.ago
+          between = (yesterday.beginning_of_day + date)..yesterday.end_of_day
+          task.habit.tasks.done.where(created_at: between).all?(&:done?)
+        end
+      end
+    end
   end
 end
