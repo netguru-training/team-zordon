@@ -89,21 +89,19 @@ module Merit
     #  description: "Make 40 tasks green"
     #  )
 
-        grant_on 'tasks#create', badge: 'Alibaba', 
-          model_name: 'task', to: :user do |task|
-          user = task.habit.user
-        end
+      grant_on 'tasks#create', badge: 'Alibaba', 
+        model_name: 'task', to: :user do |task|
+        user = task.habit.user
+      end
 
 
 
      
-        def streak_check(date, task)
-          yesterday = 1.day.ago
-          between = (yesterday.beginning_of_day + date)..yesterday.end_of_day
-          task.habit.tasks.done.where(created_at: between).all?(&:done?)
-        end
-      
-      
+      def streak_check(date, task)
+        yesterday = 1.day.ago
+        between = (yesterday.beginning_of_day + date)..yesterday.end_of_day
+        task.habit.tasks.done.where(created_at: between).all?(&:done?)
+      end  
     end
   end
 end
