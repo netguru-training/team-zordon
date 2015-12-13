@@ -20,7 +20,7 @@ $('document').ready(function() {
   var sendStateChangeRequest = function(span, habit, state, task) {
     $.ajax({
       type: (task == undefined ? "POST" : "PATCH"),
-      url: "habits/" + habit + "/tasks/" + task,
+      url: "habits/" + habit + "/tasks/" + (task == undefined ? "" : task),
       data: {
         task: {
           state: state,

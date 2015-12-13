@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 	expose(:habit)
 
 	def create
-		habit.tasks.save
+    task.save
+		habit.tasks << task
 
     head status: 200
 	end
