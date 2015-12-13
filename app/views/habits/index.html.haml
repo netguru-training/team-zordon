@@ -1,13 +1,14 @@
-= link_to t('shared.add_new_item'), new_habit_path, class: 'btn btn-default'
-%table.table.table-hover
-  %thead
-    %tr
-      %th.col-md-2= t('habit.columns.name')
-      %th.col-md-2= t('habit.columns.description')
-      %th.col-md-2= t('habit.columns.small_name')
-      %th.col-md-2= t('habit.columns.small_description')
-      %th.col-md-2= t('habit.columns.days')
-      %th.col-md-1= t('habit.columns.active')
-      %th.col-md-1= t('shared.actions')
-  %tbody
-    = render 'habits'
+.habits-index
+  = link_to t('shared.add_new_item'), new_habit_path, class: 'btn btn-default'
+  %table.table.table-hover
+    %thead
+      %tr
+        %th.col-md-2= t('habit.columns.name')
+        %th.col-md-2= t('habit.columns.description')
+        %th.col-md-2= t('habit.columns.small_name')
+        %th.col-md-2= t('habit.columns.small_description')
+        %th.col-md-2= t('habit.columns.days')
+        %th.col-md-1= t('habit.columns.active')
+        %th.col-md-1= t('shared.actions')
+    %tbody
+      = render 'habits'
