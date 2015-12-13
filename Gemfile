@@ -10,6 +10,7 @@ gem 'decent_exposure'
 gem 'merit'
 gem 'simple_calendar', "~> 2.0"
 gem 'draper'
+gem "select2-rails"
 
 group :development, :test do
   gem 'byebug'
