@@ -25,7 +25,7 @@ end
 puts "CREATED TASKS"
 
 
-ACHIEVEMENT_NAMES = %w(Batman Superman Tarzan Hulk).shuffle
+ACHIEVEMENT_NAMES = %w(Batman Superman Tarzan Hulk Spiderman).shuffle
 SEEN_STATE = %w(true false)
 
 5.times do
