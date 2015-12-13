@@ -13,6 +13,8 @@
               %span.add-task.glyphicon.glyphicon-remove-sign
             - elsif habit.tasks.on_day(date).first.suspended?
               %span.add-task.glyphicon.glyphicon-hourglass
+            - elsif habit.tasks.on_day(date).first.small_done?
+              %span.add-task.glyphicon.glyphicon-ok-circle
             - else
               %span.add-task.glyphicon.glyphicon-ok-sign
         - elsif date.today?
@@ -21,8 +23,8 @@
         - else
           %span.glyphicon.glyphicon-question-sign
 .hidden#calendar-action-buttons
-  .btn-group{ role: "group" }
+  .action-buttons
     %button.done-action.btn.btn-success{type: "button"} Done
-    %br
+    %button.small-done-action.btn.btn-success{type: "button"} Small done
     %button.suspended-action.btn.btn-warning{type: "button"} Suspend
     %button.not-done-action.btn.btn-danger{type: "button"} Not done

@@ -11,6 +11,7 @@ $('document').ready(function() {
    
   var stateToIcon = function(state) {
     switch(state) {
+      case "small_done": return "glyphicon glyphicon-ok-circle"
       case "done": return "glyphicon-ok-sign";
       case "suspended": return "glyphicon-hourglass";
       case "not_done": return "glyphicon-remove-sign";
@@ -44,6 +45,10 @@ $('document').ready(function() {
 
   $('body').on('click', '.popover .done-action', function() {
     changeState($(this).closest("span"), "done"); 
+  });
+
+  $('body').on('click', '.popover .small-done-action', function() {
+    changeState($(this).closest("span"), "small_done"); 
   });
 
   $('body').on('click', '.popover .suspended-action', function() {
