@@ -6,9 +6,13 @@
 }
 
 .select2-selection__choice {
-  color: $black-select2; //--todo change
+  color: $black-select2;
 }
 
 .select2-results__option {
   color: $black-select2;
+}
+
+.action-buttons .btn {
+  width: 100%;
 }

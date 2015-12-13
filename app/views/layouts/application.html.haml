@@ -12,6 +12,7 @@
     = render 'layouts/messages'
     .main
       .container
-        .row
-          = image_tag('logo_4.png')
+        .row.app-content
           = yield
+        .row
+          = image_tag('logo_4.png', class: 'logo')

@@ -13,15 +13,18 @@
               %span.add-task.glyphicon.glyphicon-remove-sign
             - elsif habit.tasks.on_day(date).first.suspended?
               %span.add-task.glyphicon.glyphicon-hourglass
+            - elsif habit.tasks.on_day(date).first.small_done?
+              %span.add-task.glyphicon.glyphicon-ok-circle
             - else
-              %span.add-task.glyphicon.glyphicon-ok-sign
+              %span.add-task.glyphicon.glyphicon-ok-sign.task_done
         - elsif date.today?
           %span.actions{:'data-toggle' => "popover", :'data-habit' => habit.id}
             %span.add-task.glyphicon.glyphicon-info-sign
         - else
           %span.glyphicon.glyphicon-question-sign
 .hidden#calendar-action-buttons
-  .btn-group{ role: "group" }
-    %button.done-action.btn.btn-default{type: "button"} Done
-    %button.suspended-action.btn.btn-default{type: "button"} Suspend
-    %button.not-done-action.btn.btn-default{type: "button"} Not done
+  .action-buttons
+    %button.done-action.btn.btn-success{type: "button"} Done
+    %button.small-done-action.btn.btn-primary{type: "button"} Small done
+    %button.suspended-action.btn.btn-warning{type: "button"} Suspend
+    %button.not-done-action.btn.btn-danger{type: "button"} Not done
