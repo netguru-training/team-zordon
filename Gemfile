@@ -11,6 +11,7 @@ gem 'merit'
 gem 'simple_calendar', "~> 2.0"
 gem 'draper'
 gem "select2-rails"
+gem 'decent_decoration'
 
 group :development, :test do
   gem 'byebug'
