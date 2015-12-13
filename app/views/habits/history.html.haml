@@ -1,6 +1,6 @@
 -user_habits.each do |habit|
   .col-md-4
-    %h3=habit.name
+    %h6=habit.name
     =month_calendar do |date|
       =date.strftime("%d")
       - if habit.days.include? date.wday

@@ -31,8 +31,18 @@ body {
   background-color: #37C742
   }
 
-  a {
-  color:#080808
+  a:nth-child(1) {
+  margin-left: 10px;
+  left: 10px;
+  margin-right: 65px;
+  color: #FFFFFF;
+  }
+
+
+  a:nth-child(2) {
+  position: absolute;
+  right: 27px;
+  color: #FFFFFF;
   }
 
   .glyphicon-ok-sign {
