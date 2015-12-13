@@ -9,9 +9,9 @@
     = csrf_meta_tags
   %body
     = render 'layouts/navigation'
-    = render 'layouts/messages'
     .main
       .container
+        = render 'layouts/messages'
         .row.app-content
           = yield
         .row
