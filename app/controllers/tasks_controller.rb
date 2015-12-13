@@ -3,8 +3,16 @@ class TasksController < ApplicationController
 	expose(:habit)
 
 	def create
-		habit.tasks.save
-		redirect_to habit_history_path, notice: "Your answer has been added"
+    task.save
+		habit.tasks << task
+
+    head status: 200
+	end
+
+	def update 
+    task.save
+
+    head status: 200
 	end
 
 	private

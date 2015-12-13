@@ -5,17 +5,23 @@
       =date.strftime("%d")
       - if habit.days.include? date.wday
         - if habit.tasks.on_day(date).exists?
-          %span{:'data-toggle' => "popover", title: "Choose action:", :'data-content' => "Actions!"}
+          %span.actions{:'data-toggle' => "popover",
+           :'data-date' => date,
+           :'data-habit' => habit.id,
+           :'data-task' => habit.tasks.on_day(date).first.id}
             - if habit.tasks.on_day(date).first.not_done?
-              %span.add-task.glyphicon.glyphicon-remove-sign{ :'data-date' => date }
+              %span.add-task.glyphicon.glyphicon-remove-sign
             - elsif habit.tasks.on_day(date).first.suspended?
-              %span.add-task.glyphicon.glyphicon-hourglass{ :'data-date' => date }
+              %span.add-task.glyphicon.glyphicon-hourglass
             - else
-              %span.add-task.glyphicon.glyphicon-ok-sign{ :'data-date' => date }
+              %span.add-task.glyphicon.glyphicon-ok-sign
+        - elsif date.today?
+          %span.actions{:'data-toggle' => "popover", :'data-habit' => habit.id}
+            %span.add-task.glyphicon.glyphicon-info-sign
         - else
           %span.glyphicon.glyphicon-question-sign
 .hidden#calendar-action-buttons
   .btn-group{ role: "group" }
     %button.done-action.btn.btn-default{type: "button"} Done
-    %button.suspend-action.btn.btn-default{type: "button"} Suspend
+    %button.suspended-action.btn.btn-default{type: "button"} Suspend
     %button.not-done-action.btn.btn-default{type: "button"} Not done
