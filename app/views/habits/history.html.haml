@@ -10,7 +10,7 @@
            :'data-habit' => habit.id,
            :'data-task' => habit.tasks.on_day(date).first.id}
             - if habit.tasks.on_day(date).first.not_done?
-              %span.add-task.glyphicon.glyphicon-remove-sign.task_fail
+              %span.add-task.glyphicon.glyphicon-remove-sign
             - elsif habit.tasks.on_day(date).first.suspended?
               %span.add-task.glyphicon.glyphicon-hourglass
             - elsif habit.tasks.on_day(date).first.small_done?
@@ -25,6 +25,6 @@
 .hidden#calendar-action-buttons
   .action-buttons
     %button.done-action.btn.btn-success{type: "button"} Done
-    %button.small-done-action.btn.btn-success{type: "button"} Small done
+    %button.small-done-action.btn.btn-primary{type: "button"} Small done
     %button.suspended-action.btn.btn-warning{type: "button"} Suspend
     %button.not-done-action.btn.btn-danger{type: "button"} Not done

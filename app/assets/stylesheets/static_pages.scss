@@ -51,6 +51,10 @@ body {
     text-shadow: 0px 0px 10px white;
   }
   
+  .glyphicon-ok-circle {
+    color: #3B4CD8;
+    text-shadow: 0px 0px 10px white;
+  }
   
 }
 .well, .authform form, .authform fieldset {
@@ -78,6 +82,12 @@ body {
   }
 
   .btn-danger {
+    border: 2px solid;
+    border-radious: 25px;
+    width: 100px;
+  }
+
+  .btn-primary {
     border: 2px solid;
     border-radious: 25px;
     width: 100px;
