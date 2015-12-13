@@ -10,11 +10,11 @@
            :'data-habit' => habit.id,
            :'data-task' => habit.tasks.on_day(date).first.id}
             - if habit.tasks.on_day(date).first.not_done?
-              %span.add-task.glyphicon.glyphicon-remove-sign
+              %span.add-task.glyphicon.glyphicon-remove-sign.task_fail
             - elsif habit.tasks.on_day(date).first.suspended?
-              %span.add-task.glyphicon.glyphicon-hourglass
+              %span.add-task.glyphicon.glyphicon-hourglass.task_suspend
             - else
-              %span.add-task.glyphicon.glyphicon-ok-sign
+              %span.add-task.glyphicon.glyphicon-ok-sign.task_done
         - elsif date.today?
           %span.actions{:'data-toggle' => "popover", :'data-habit' => habit.id}
             %span.add-task.glyphicon.glyphicon-info-sign
@@ -23,6 +23,5 @@
 .hidden#calendar-action-buttons
   .btn-group{ role: "group" }
     %button.done-action.btn.btn-success{type: "button"} Done
-    %br
     %button.suspended-action.btn.btn-warning{type: "button"} Suspend
     %button.not-done-action.btn.btn-danger{type: "button"} Not done

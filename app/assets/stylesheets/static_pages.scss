@@ -31,10 +31,25 @@ body {
   .today {
   background-color: #37C742
   }
+
   a {
   color:#080808
   }
 
+  .glyphicon-ok-sign {
+    color: #45BB39;
+    text-shadow: 0px 0px 10px white;
+  }
+
+  .glyphicon-remove-sign {
+    color: #BF3524;
+    text-shadow: 0px 0px 10px white;
+  }
+
+  .glyphicon-hourglass {
+    color: #EA6E11;
+    text-shadow: 0px 0px 10px white;
+  }
   
   
 }

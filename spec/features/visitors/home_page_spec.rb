@@ -10,7 +10,7 @@ feature 'Home page' do
   end
   scenario 'visit the home page' do
     visit root_path
-    expect(page).to have_content 'Be your own hero'
+    expect(page).to have_content 'Achievements'
   end
 
 end
