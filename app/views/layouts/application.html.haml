@@ -9,10 +9,10 @@
     = csrf_meta_tags
   %body
     = render 'layouts/navigation'
-    = render 'layouts/messages'
     .main
       .container
-        .row
+        = render 'layouts/messages'
+        .row.app-content
           = yield
         .row
           = image_tag('logo_4.png', class: 'logo')

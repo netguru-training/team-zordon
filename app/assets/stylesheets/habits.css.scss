@@ -5,6 +5,18 @@
   margin-top: 10px
 }
 
+.select2-selection__choice {
+  color: $black-select2;
+}
+
+.select2-results__option {
+  color: $black-select2;
+}
+
 .action-buttons .btn {
   width: 100%;
+}
+
+.padding-div {
+  padding: 15px;
 }

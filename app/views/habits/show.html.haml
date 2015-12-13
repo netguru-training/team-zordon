@@ -1,21 +1,22 @@
-%table.table.table-condensed
-  %tbody
-    %tr
-      %td= "#{t('habit.columns.name')}:"
-      %td= habit.name
-    %tr
-      %td= "#{t('habit.columns.description')}:"
-      %td= habit.description
-    %tr
-      %td= "#{t('habit.columns.small_name')}:"
-      %td= habit.small_name
-    %tr
-      %td= "#{t('habit.columns.small_description')}:"
-      %td= habit.small_description
-    %tr
-      %td= "#{t('habit.columns.days')}:"
-      %td= habit.inline_name_days
-    %tr
-      %td= "#{t('habit.columns.active')}:"
-      %td= habit.active_name
-= link_to t('shared.back'), habits_path, class: 'btn btn-default'
+.padding-div
+  %table.table.table-condensed
+    %tbody
+      %tr
+        %td= "#{t('habit.columns.name')}:"
+        %td= habit.name
+      %tr
+        %td= "#{t('habit.columns.description')}:"
+        %td= habit.description
+      %tr
+        %td= "#{t('habit.columns.small_name')}:"
+        %td= habit.small_name
+      %tr
+        %td= "#{t('habit.columns.small_description')}:"
+        %td= habit.small_description
+      %tr
+        %td= "#{t('habit.columns.days')}:"
+        %td= habit.inline_name_days
+      %tr
+        %td= "#{t('habit.columns.active')}:"
+        %td= habit.active_name
+  = link_to t('shared.back'), habits_path, class: 'btn btn-default'

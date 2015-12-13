@@ -1,19 +1,20 @@
-%h1
-%ul
-  - current_user.badges.each do |badge| 
-    %li
-      = badge.name 
+.padding-div
+  %h1
+  %ul
+    - current_user.badges.each do |badge|
+      %li
+        = badge.name
 
-  User achievements
-%table.table.table-condensed
-  %thead
-    %tr
-      %th Achievement name
-      %th Achievemnt sign
-      %th Achievement type    
-  - achievements.each do |achievement|
-    %tbody  
+    User achievements
+  %table.table.table-condensed
+    %thead
       %tr
-        %td= achievement.name
-        %td= image_tag(achievement.image, size: "100")
-        %td= achievement.achievementable_type
+        %th Achievement name
+        %th Achievemnt sign
+        %th Achievement type
+    - achievements.each do |achievement|
+      %tbody
+        %tr
+          %td= achievement.name
+          %td= image_tag(achievement.image, size: "100")
+          %td= achievement.achievementable_type
