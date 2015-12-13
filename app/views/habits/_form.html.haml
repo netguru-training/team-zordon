@@ -1,0 +1,13 @@
+= simple_form_for habit do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :small_name
+  = f.input :small_description
+  .form-group.string.optional.habit_days
+    = label_tag :days, 'Days'
+    = select_tag :days, options_for_select(Date::DAYNAMES.zip((0..6))), multiple: true, id: 'days_pick', class: 'string optional form-control'
+    #select-all.btn.btn-default.btn-habit= t('select.all')
+    #deselect-all.btn.btn-default.btn-habit= t('select.deselect')
+  = f.input :active
+  = link_to t('shared.back'), habits_path, class: 'btn btn-default'
+  = f.button :submit
