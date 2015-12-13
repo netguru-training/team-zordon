@@ -8,10 +8,13 @@ private
 def status_where_missing
   Habit.all.each do |habit|
     state = condition(habit) ? :not_done : :suspended
-    habit.tasks << Task.create(state: state)
+    @task = Task.new(state: state)
+    @task.created_at = Date.today-1
+    @task.save
+    habit.tasks << @task
   end
 end
 
 def condition(habit)
-  habit.tasks.today && habit.active?
+  habit.tasks.on_day(Date.today-1) && habit.active?
 end
