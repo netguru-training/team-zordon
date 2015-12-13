@@ -9,20 +9,29 @@
 body {
   background-image: url('bg1.jpg');
   color: #ffffff;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
+    background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
   
 }
 
 
 .main {
   margin-top: 70px;
+}
+
+
+.simple-calendar {
+
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #847C7C
+  }
+  .today {
+  background-color: #37C742
+  }
+  a {
+  color:#080808
+  }
+  
 }
