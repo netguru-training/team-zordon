@@ -16,6 +16,21 @@ class HabitsController < ApplicationController
     end
   end
 
+  def update
+    habit.days = params[:days].map{ |day| day.to_i }
+    habit.user = current_user
+    if habit.save
+      redirect_to habit_path(habit),
+        notice: I18n.t('shared.created', resource: 'Habit')
+    else
+      render :new
+    end
+
+  end
+
+  def edit
+  end
+  
   def index
   end
 
