@@ -7,14 +7,13 @@
 }
 
 body {
-  background-image: url('bg1.jpg');
+  background-image: url(image-path('bg1.jpg'));
   background-repeat: no-repeat;
   color: #ffffff;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  
 }
 
 
@@ -50,8 +49,7 @@ body {
     color: #EA6E11;
     text-shadow: 0px 0px 10px white;
   }
-  
-  
+
 }
 .well, .authform form, .authform fieldset {
    background-color: transparent;
