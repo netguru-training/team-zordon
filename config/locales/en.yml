@@ -24,6 +24,10 @@ en:
   select:
     all: "Select all"
     deselect: "Deselect all"
+    week: "Work week days"
+    weekend: "Weekend days"
+    odd: "Every odd day"
+    even: "Every even day"
   habit:
     columns:
       name: "Name"

@@ -7,6 +7,10 @@
     = label_tag :days, 'Days'
     = select_tag :days, options_for_select(Date::DAYNAMES.zip((0..6))), multiple: true, id: 'days_pick', class: 'string optional form-control'
     #select-all.btn.btn-default.btn-habit= t('select.all')
+    #week.btn.btn-default.btn-habit= t('select.week')
+    #weekend.btn.btn-default.btn-habit= t('select.weekend')
+    #every-odd-day.btn.btn-default.btn-habit= t('select.odd')
+    #every-even-day.btn.btn-default.btn-habit= t('select.even')
     #deselect-all.btn.btn-default.btn-habit= t('select.deselect')
   = f.input :active
   = link_to t('shared.back'), habits_path, class: 'btn btn-default'
