@@ -39,6 +39,7 @@ en:
   shared:
     actions: "Actions"
     created: "%{resource} has been created!"
+    deleted: "%{resource} has been deleted!"
     back: Back
     add_new_item: Add new one
   active:

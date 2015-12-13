@@ -25,7 +25,11 @@ class HabitsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def destroy
+    habit.destroy
+    redirect_to habits_path, notice: I18n.t('shared.deleted', resource: 'Habit')
   end
 
   def edit

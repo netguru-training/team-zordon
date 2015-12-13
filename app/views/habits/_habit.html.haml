@@ -6,7 +6,7 @@
   %td
     %ul
       - habit.name_days.each do |name|
-        %li= name 
+        %li= name
   %td= habit.active_name
   %td
     = link_to habit_path(habit) do
@@ -15,6 +15,6 @@
     = link_to edit_habit_path(habit) do
       %button.btn.btn-default
         %span.glyphicon.glyphicon-edit
-    = link_to habit_path(habit, { method: :delete }) do
+    = link_to habit_path(habit), { method: :delete } do
       %button.btn.btn-default
         %span.glyphicon.glyphicon-remove
