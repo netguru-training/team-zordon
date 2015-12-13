@@ -9,19 +9,17 @@
 body {
   background-image: url('bg1.jpg');
   background-repeat: no-repeat;
-  color: #ffffff;
+  color: $white;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  
-}
 
+}
 
 .main {
   margin-top: 70px;
 }
-
 
 .simple-calendar {
 
@@ -29,14 +27,12 @@ body {
     background-color: #847C7C
   }
   .today {
-  background-color: #37C742
+    background-color: #37C742
   }
   a {
   color:#080808
   }
 
-  
-  
 }
 .well, .authform form, .authform fieldset {
    background-color: transparent;
@@ -49,7 +45,3 @@ body {
  tr:hover td {
   background-color: #FFFAF0; color: #000;
 }
-  
-
-
-
