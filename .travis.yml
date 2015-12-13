@@ -6,7 +6,10 @@ before_script:
 - psql -c 'create database zordon_app_test;' -U postgres
 addons:
   postgresql: '9.3'
-script: bundle exec rspec
+script:
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:

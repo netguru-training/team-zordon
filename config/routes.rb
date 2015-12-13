@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'achievements', to: 'achievements#index'
   devise_for :users
 
-  resources :habits
+  resources :habits do
+  	resources :tasks, only: [:create]
+  end
     
   get 'history', to: 'habits#history', as: :habit_history
 end

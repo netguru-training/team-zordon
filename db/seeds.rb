@@ -24,18 +24,32 @@ Habit.all.each do |habit|
 end
 puts "CREATED TASKS"
 
+Achievement.create!(
+  name: "Spiderman",
+  description: "Congrats! You have stayed with your habit for one week",
+  image: "spiderman.jpg",
+  )
+Achievement.create!(
+  name: "Batman",
+  description: "Congrats! You have stayed with your habit for two weeks",
+  image: "batman.jpg",
+  )
+Achievement.create!(
+  name: "Hulk",
+  description: "Congrats! You have stayed with your habit for one month",
+  image: "hulk.jpg",
+  )
+Achievement.create!(
+  name: "Superman",
+  description: "Congrats! You have stayed with your habit for three months",
+  image: "superman.jpg",
+  )
+Achievement.create!(
+  name: "Ironman",
+  description: "Congrats! You have stayed with your habit for half a year",
+  image: "ironman.jpg",
+  )
 
-ACHIEVEMENT_NAMES = %w(Batman Superman Tarzan Hulk).shuffle
-SEEN_STATE = %w(true false)
-
-5.times do
-	Achievement.create!(
-	  name: ACHIEVEMENT_NAMES.pop,
-	  description: Faker::Lorem.sentence,
-	  image: Faker::Avatar.image("50x50"),
-	  seen: SEEN_STATE.sample 
-		)
-end
 puts "CREATED ACHIEVEMENTS"
 
 puts "Seeds: done"

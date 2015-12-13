@@ -24,6 +24,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
+gem 'faker'
 group :development do
   gem 'better_errors'
   gem 'foreman'
@@ -36,7 +37,6 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'

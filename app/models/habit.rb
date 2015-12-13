@@ -6,4 +6,5 @@ class Habit < ActiveRecord::Base
   has_many :achievements, as: :achievementable
   belongs_to :user
 
+  accepts_nested_attributes_for :tasks
 end

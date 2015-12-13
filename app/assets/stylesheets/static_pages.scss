@@ -5,3 +5,34 @@
   width: 500px;
   height: 100px;
 }
+
+body {
+  background-image: url('bg1.jpg');
+  background-repeat: no-repeat;
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+
+
+.main {
+  margin-top: 70px;
+}
+
+
+.simple-calendar {
+
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #847C7C
+  }
+  .today {
+  background-color: #37C742
+  }
+  a {
+  color:#080808
+  }
+  
+}
