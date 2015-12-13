@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
 	expose(:task, attributes: :task_params)
+	expose(:habit)
 
 	def create
-		task.save
+		habit.tasks.save
 		redirect_to habit_history_path, notice: "Your answer has been added"
 	end
 
