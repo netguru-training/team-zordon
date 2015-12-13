@@ -21,6 +21,9 @@
 
 en:
   hello: "Hello world"
+  select:
+    all: "Select all"
+    deselect: "Deselect all"
   habit:
     columns:
       name: "Name"
@@ -31,6 +34,9 @@ en:
       days: "Days"
   shared:
     actions: "Actions"
+    created: "%{resource} has been created!"
+    back: Back
+    add_new_item: Add new one
   active:
     truthy: "Active"
     falsy: "Suspended"
