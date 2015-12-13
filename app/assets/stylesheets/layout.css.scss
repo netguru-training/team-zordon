@@ -1,13 +1,5 @@
-.logo {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 500px;
-  height: 100px;
-}
-
-body {
-  background-image: url('bg1.jpg');
+.backgrund {
+  background-image: url('../images/bg1.jpg');
   color: #ffffff;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -19,10 +11,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
     width: 100%;
-  
-}
-
-
-.main {
-  margin-top: 70px;
+  background-attachment: relative;
+  background-position: center center;
 }
